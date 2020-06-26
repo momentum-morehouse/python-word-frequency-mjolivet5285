@@ -13,18 +13,13 @@ flat_list = []
 workinList =[]
 frequency_list=frequency.keys()
 
-def flatten_lol(lol):
-  for l in lol:
-    for word in l:
-      flat_list.append(word)
-  return flat_list
-  workinList = flatten_lol(cleaned_text)
+
 def print_word_freq(file):
   
   with open(file) as f:
     for items in f:
       extra.append(items)
-     print(workinList):
+     
    
 for items in extra:
     clean = re.sub(r"[!?.,]","",items.lower())
