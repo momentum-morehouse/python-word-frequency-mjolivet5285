@@ -5,34 +5,44 @@ STOP_WORDS = [
     'i', 'in', 'is', 'it', 'its', 'of', 'on', 'that', 'the', 'to', 'were',
     'will', 'with'
 ]
+
 extra =[]
 wordfreq = []
-frequency_list =[]
-frequency_list = frequency.keys()
+frequency =[]
+flat_list = []
+workinList =[]
+frequency_list=frequency.keys()
+
+def flatten_lol(lol):
+  for l in lol:
+    for word in l:
+      flat_list.append(word)
+  return flat_list
+  workinList = flatten_lol(cleaned_text)
 def print_word_freq(file):
   
   with open(file) as f:
     for items in f:
       extra.append(items)
-     
+     print(workinList):
    
 for items in extra:
     clean = re.sub(r"[!?.,]","",items.lower())
     cleaner = clean.split()
     wordfreq.append(cleaner)
 
-for word in list(working_list):  
+for word in list(workinList):  
   if word in STOP_WORDS:
-    working_list.remove(word)
-    for word in working_list:
+    workinList.remove(word)
+    for word in workinList:
       count = frequency.get(word,0)
       frequency[word] = count + 1
      
       
- for words in frequency_list:
-               # ^ counting words in text
-  print(words,'|' ,frequency[words) 
-    
+for words in frequency_list:
+     # counting words in text
+  print(words,'|' ,frequency[words])
+
 if __name__ == "__main__":
 
     import argparse
