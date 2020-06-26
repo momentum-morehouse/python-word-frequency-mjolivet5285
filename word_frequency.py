@@ -7,6 +7,8 @@ STOP_WORDS = [
 ]
 extra =[]
 wordfreq = []
+frequency_list =[]
+frequency_list = frequency.keys()
 def print_word_freq(file):
   
   with open(file) as f:
@@ -18,6 +20,18 @@ for items in extra:
     clean = re.sub(r"[!?.,]","",items.lower())
     cleaner = clean.split()
     wordfreq.append(cleaner)
+
+for word in list(working_list):  
+  if word in STOP_WORDS:
+    working_list.remove(word)
+    for word in working_list:
+      count = frequency.get(word,0)
+      frequency[word] = count + 1
+     
+      
+ for words in frequency_list:
+               # ^ counting words in text
+  print(words,'|' ,frequency[words) 
     
 if __name__ == "__main__":
 
